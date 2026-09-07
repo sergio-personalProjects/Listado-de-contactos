@@ -1,0 +1,27 @@
+<div class="flex items-center gap-2 rounded-xl border border-white/60 bg-white/60 p-1">
+     <!-- Decretos -->
+    <a
+        routerLink="/decretos"
+        class="cursor-pointer mx-1.5 border-b-2 px-2 py-1 text-gray-800 transition-colors sm:mx-6 dark:text-gray-200 "
+        [class.border-[#b41431]]="!mostrarPorUsuario"
+        [class.border-transparent]="mostrarPorUsuario"
+        [class.text-[#b41431]]="!mostrarPorUsuario"
+        (click)="mostrarPorUsuario = false; cambiarVista.emit(false)"
+    >
+        Decretos
+    </a>
+
+    <!-- Mostrar decretos por usuario -->
+    <a 
+        routerLink="/decretosUsuario"
+        class="mx-1.5 border-b-2 px-2 py-1 text-gray-800 transition-colors sm:mx-6 dark:text-gray-200"
+        [class.border-[#b41431]]="mostrarPorUsuario"
+        [class.border-transparent]="!mostrarPorUsuario"
+        [class.text-[#b41431]]="mostrarPorUsuario"
+        (click)="mostrarPorUsuario = true; cambiarVista.emit(true)"
+    >
+        Mostrar decretos por usuario
+    </a>
+</div>
+
+

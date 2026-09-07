@@ -1,0 +1,28 @@
+<!--El componente header incluye la logica para el botón interruptor del cambio de ventanas-->
+<app-header
+  [titulo]="vistaActual === 'agenda' ? 'Agenda interna de teléfonos' : 'Decretos'"
+  [vistaActual]="vistaActual"
+  (cambiarVista)="cambiarVista()"
+  (cambiarVistaDecretos)="mostrarPorUsuario = $event"
+>
+</app-header>
+
+<main
+  class="grid min-h-[calc(100vh-15rem)] grid-cols-1 gap-5 px-4 py-5 md:grid-cols-[18rem_minmax(0,1fr)] md:px-8 lg:px-12"
+>
+  <!--Alternar entre la vista de la agenda y los decretos-->
+  @if (vistaActual === 'agenda') {
+    <app-sidebar-filtros
+      (filtrosCambiados)="aplicarFiltros($event)"
+    ></app-sidebar-filtros>
+    <app-results></app-results>
+  } @else {
+    @if (!mostrarPorUsuario) {
+      <app-decretos class="md:col-span-2"></app-decretos>
+    } @else {
+      <app-decretos-usuario class="md:col-span-2"></app-decretos-usuario>
+    }
+  }
+ 
+</main>
+<app-footer></app-footer>

@@ -1,13 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>AngularProject</title>
+  <title>Agenda y Decretos</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <link rel="icon" type="image/x-icon" href="assets/favicon/faviconWeb.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Lato', 'sans-serif'] }, boxShadow: { glass: '0 24px 80px rgba(15,23,42,.16)' } } } }</script>
 </head>
-<body>
+<body class="min-h-screen bg-[#f8f5f2] bg-[radial-gradient(circle_at_8%_5%,rgba(180,20,49,.16),transparent_28%),radial-gradient(circle_at_95%_20%,rgba(245,194,78,.24),transparent_32%),radial-gradient(circle_at_48%_100%,rgba(113,190,210,.20),transparent_38%)] bg-fixed font-sans text-slate-800 antialiased">
   <app-root></app-root>
 </body>
 </html>
